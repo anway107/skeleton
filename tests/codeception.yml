@@ -1,0 +1,20 @@
+include:
+  - codeception/common
+  - codeception/console
+  - codeception/backend
+  - codeception/frontend
+
+paths:
+  log: codeception/_output
+
+settings:
+  colors: true
+coverage:
+    enabled: true
+    whitelist:
+            include:
+                - app/*
+                - backend/*
+                - backend/models/*
+            exclude:
+                - app/cache/*
