@@ -22,7 +22,6 @@ class m160513_053153_mail_log extends Migration
     public function down()
     {
         echo "m160513_053153_mail_log cannot be reverted.\n";
-
         return false;
     }
 

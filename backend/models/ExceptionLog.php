@@ -51,7 +51,7 @@ class ExceptionLog extends \yii\db\ActiveRecord
     {
         return [
             [['classname'],'required'],
-            [['stacktace'], 'string'],
+            [['stacktrace'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['exception', 'function'], 'string', 'max' => 255],
         ];
@@ -66,7 +66,7 @@ class ExceptionLog extends \yii\db\ActiveRecord
             'id' => 'ID',
             'exception' => 'Exception',
             'function' => 'Function',
-            'stacktace' => 'Stacktace',
+            'stacktrace' => 'Stacktace',
             'classname' => 'Classname',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',

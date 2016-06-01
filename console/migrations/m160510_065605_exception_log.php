@@ -12,7 +12,7 @@ class m160510_065605_exception_log extends Migration
             'id' => Schema::TYPE_PK. ' AUTO_INCREMENT ',
             'exception' => Schema::TYPE_STRING,
             'function' => Schema::TYPE_STRING,
-            'stacktace' => Schema::TYPE_TEXT,
+            'stacktrace' => Schema::TYPE_TEXT,
             'classname' => Schema::TYPE_STRING,
             'created_at' => Schema::TYPE_DATETIME,
             'updated_at' => Schema::TYPE_DATETIME,
