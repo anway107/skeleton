@@ -136,4 +136,28 @@ class Functionalities
             $exception_log->createException(__FUNCTION__,__CLASS__,$e);
         }
     }
+    /**
+     * Configure the S3 component in config/main-local.php
+     * @param $file_attribute
+     * @return null
+     */
+    public static function uploadFileToS3($file_attribute)
+    {
+        try {
+
+            if (empty($_FILES[$file_attribute])) {
+
+                return null;
+            } else {
+
+                $filename = date("d_m_y_h_i_sa"). "_" . $_FILES[$file_attribute]['name'];
+                $result = Yii::$app->get('s3bucket')->upload($filename, $_FILES[$file_attribute]['tmp_name']);
+                return $result['ObjectURL'];
+            }
+        } catch(\Exception $e) {
+
+            $exception_log = new ExceptionLog();
+            $exception_log->createException(__FUNCTION__,__CLASS__,$e);
+        }
+    }
 }
